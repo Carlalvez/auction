@@ -101,4 +101,21 @@ public class Auction
             return null;
         }
     }
+    
+     /**
+     * Muestra los detalles de subastas con una puja como minimo.
+     */
+    public void close() 
+    {
+        for(Lot lote : lots) {
+            Bid highestBid = lote.getHighestBid();
+            
+            if(highestBid != null) {
+               System.out.println(lote);
+               
+            } else {
+                System.out.println(lote.getNumber() + ": No hay puja");
+            }
+        }
+    }
 }
